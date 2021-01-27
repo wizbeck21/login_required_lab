@@ -7,6 +7,12 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<% if session.include? :name %>
+<div>
+  <%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'})%>
+  <input type=submit value="Logout">
+</div>
+<% end %>
 
 <%= yield %>
 
